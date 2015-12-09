@@ -18,7 +18,7 @@ public class testFinderMean {
         collection.add(7);
         collection.add(5);
 
-        assertEquals(FinderMean.mean(collection), new Integer(5));
+        assertEquals(FinderMean.avg(collection), new Integer(5));
     }
 
     @Test
@@ -26,12 +26,12 @@ public class testFinderMean {
         ArrayList<String> collection = new ArrayList<>();
         collection.add("Nikola");
         collection.add("John");
-        collection.add("Anna");
+        collection.add("Bob");
         collection.add("Alex");
         collection.add("Selena");
         collection.add("Sergio");
         collection.add("Michael");
 
-        assertEquals(FinderMean.mean(collection), "Michael");
+        assertEquals(FinderMean.avg(collection), "Michael");
     }
 }

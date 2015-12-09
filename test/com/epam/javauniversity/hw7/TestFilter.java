@@ -45,23 +45,4 @@ public class TestFilter {
             }
         }), resList);
     }
-
-    @Test
-    public void testFilterListNull() {
-        ArrayList<String> list = null;
-
-        assertEquals(Filter.filter(list, new Predicate<String>() {
-            @Override
-            public boolean apply(String value) {
-                return false;
-            }
-        }), new ArrayList<String>());
-    }
-
-    @Test
-    public void testFilterPredicateNull() {
-        ArrayList<String> list = new ArrayList<>();
-        list.add("asd");
-        assertEquals(Filter.filter(list, null), list);
-    }
 }

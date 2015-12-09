@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public final class Filter {
 
-    public Filter() {
+    private Filter() {
     }
 
     public static <T> ArrayList<T> filter(ArrayList<T> list, Predicate predicate) {
         if (list == null) {
-            return new ArrayList<T>();
+            throw new NullPointerException("list is null");
         }
         if (predicate == null) {
-            return list;
+            throw new NullPointerException("predicate is null");
         }
         ArrayList<T> newList = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {

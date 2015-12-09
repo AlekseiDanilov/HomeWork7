@@ -4,18 +4,16 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public final class FinderMean {
-    {
+
+    private FinderMean() {
     }
 
-    public FinderMean() {
-    }
-
-    public static <T extends Comparable<T>> T mean(ArrayList<T> collection) {
+    public static <T extends Comparable<? super T>> T avg(ArrayList<? extends T> collection) {
         if (collection == null) {
-            throw new NullPointerException();
+            throw new NullPointerException("collection is null");
         }
         if (collection.size() == 0) {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException("collection is empty");
         }
         collection.sort(new Comparator<T>() {
             @Override
