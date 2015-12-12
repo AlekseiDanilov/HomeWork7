@@ -3,13 +3,14 @@ package com.epam.javauniversity.hw7;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import static org.junit.Assert.*;
 
-public class testFinderMean {
+public class TestFinderAvg {
 
     @Test
-    public void testFinderMeanInteger() {
+    public void testFinderAvgInteger() {
         ArrayList<Integer> collection = new ArrayList<>();
         collection.add(2);
         collection.add(4);
@@ -18,11 +19,11 @@ public class testFinderMean {
         collection.add(7);
         collection.add(5);
 
-        assertEquals(FinderMean.avg(collection), new Integer(5));
+        assertEquals(FinderAvg.avg(collection), new Integer(5));
     }
 
     @Test
-    public void testFinderMeanString() {
+    public void testFinderAvgString() {
         ArrayList<String> collection = new ArrayList<>();
         collection.add("Nikola");
         collection.add("John");
@@ -32,6 +33,6 @@ public class testFinderMean {
         collection.add("Sergio");
         collection.add("Michael");
 
-        assertEquals(FinderMean.avg(collection), "Michael");
+        assertEquals(FinderAvg.avg(collection), "Michael");
     }
 }

@@ -7,19 +7,19 @@ public final class Filter {
     private Filter() {
     }
 
-    public static <T> ArrayList<T> filter(ArrayList<T> list, Predicate predicate) {
-        if (list == null) {
-            throw new NullPointerException("list is null");
+    public static <T> ArrayList<T> filter(ArrayList<T> elements, Predicate<T> predicate) {
+        if (elements == null) {
+            throw new IllegalArgumentException("elements is null");
         }
         if (predicate == null) {
-            throw new NullPointerException("predicate is null");
+            throw new IllegalArgumentException("predicate is null");
         }
-        ArrayList<T> newList = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++) {
-            if (predicate.apply(list.get(i))) {
-                newList.add(list.get(i));
+        ArrayList<T> result = new ArrayList<>();
+        for (T element : elements) {
+            if (predicate.apply(element)) {
+                result.add(element);
             }
         }
-        return newList;
+        return result;
     }
 }

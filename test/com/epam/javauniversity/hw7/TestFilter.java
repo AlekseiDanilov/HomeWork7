@@ -21,10 +21,11 @@ public class TestFilter {
 
         assertEquals(Filter.filter(list, new Predicate<String>() {
             @Override
-            public boolean apply(String value) {
+            public <U extends String> boolean apply(U value) {
                 return value.length() < 5;
             }
         }), resList);
+
     }
 
     @Test
@@ -40,8 +41,8 @@ public class TestFilter {
 
         assertEquals(Filter.filter(list, new Predicate<Integer>() {
             @Override
-            public boolean apply(Integer value) {
-                return value % 3 == 0;
+            public <U extends Integer> boolean apply(U value) {
+                return value.intValue() % 3 == 0;
             }
         }), resList);
     }
